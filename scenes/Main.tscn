@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://df2cc0j5lxbo"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_6t34i"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_6t34i")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -319.0
+offset_bottom = -293.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Insert the quantity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -272.0
+offset_bottom = -223.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "50"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -183.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OK"
+
+[connection signal="text_changed" from="Control/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
